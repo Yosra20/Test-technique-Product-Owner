@@ -76,7 +76,7 @@ Compatibilité : module accessible sur navigateurs récents (Chrome, Edge..).
 Disponibilité : 99,9 % d’uptime.
 
 ### 1.2. Planification des Tâches
-##### a. Entrées
+#### a. Entrées
 
 Nom de la tâche 
 
@@ -94,7 +94,7 @@ Dépendances (autres tâches)
 
 Commentaires et fichiers attachés
 
-##### b. Actions possibles
+#### b. Actions possibles
 
 Créer / modifier / supprimer une tâche
 
@@ -108,7 +108,7 @@ Mettre à jour l’état d’avancement
 
 Modifier les dates selon contraintes
 
-##### c. Résultats attendus
+#### c. Résultats attendus
 
 Création : tâche enregistrée et visible dans la phase.
 
@@ -118,7 +118,7 @@ Ajout de dépendance : le système empêche le démarrage d’une tâche dépend
 
 Ajout de commentaire ou fichier : visible immédiatement dans l’interface.
 
-##### d. Règles métier et contraintes
+#### d. Règles métier et contraintes
 
 Un utilisateur ne peut pas être affecté à plus de 3 tâches actives sur un même projet.
 
@@ -130,7 +130,7 @@ Les dates doivent être cohérentes (début ≤ fin).
 
 Le budget d’une tâche ne doit pas faire dépasser le budget global du projet.
 
-##### e. Fonctionnalités non fonctionnelles
+#### e. Fonctionnalités non fonctionnelles
 
 Performance : création de tâche rapidement.
 
@@ -140,7 +140,7 @@ Compatibilité : responsive sur tablette et PC.
 
 Sauvegarde automatique en cas de perte de connexion.
 
-#### 1.3. Suivi des Performances
+### 1.3. Suivi des Performances
 ##### a. Entrées
 
 Données calculées automatiquement :
@@ -191,7 +191,7 @@ Compatibilité : accessible depuis mobile.
 
 Fiabilité : mise à jour des KPIs en temps réel.
 
-###### 1.4. Règles Métier Globales
+### 1.4. Règles Métier Globales
 ##### a. Règles
 
 Un utilisateur ne peut pas être affecté à plus de 3 tâches actives sur le même projet.
@@ -212,8 +212,8 @@ L’assignation d’un 4ᵉ tâche à un utilisateur déclenche une erreur bloqu
 
 Cohérence des dates et budgets
 
-## 2. Test Manuel 
-Scénarios de Test et Détection de Bugs
+## 2. Test Manuel - Scénarios de Test et Détection de Bugs
+### 1. Scénarios de Test
 
 ##### A. Gestion des projets — Scénarios de test
 Scénario A1 — Création projet (Nominal)
@@ -312,10 +312,65 @@ Simuler accumulation de coûts au seuil configuré (ex. 90%).
 Résultat attendu : alerte au chef de projet, option d’arrêt d’approbation si config.
 Validation : audit, UI d’alerte, lien vers rapport.
 
-Zones de risque (Suivi)
+### 2. Détection des Bugs 
+#### a. Zones de risque potentielles
 
-Calculs agrégés erronés (somme budgets vs coûts réels)
+Validation des formulaires (dates, budget, affectations)
 
-Notifications non envoyées ou envoyées en double
+Calcul des dépendances entre tâches
 
-Performances du dashboard sur gros projets (latence, timeouts)
+Calcul des budgets et pourcentages d’avancement
+
+Gestion des notifications (risque de doublons ou absence d’alerte)
+
+Upload des fichiers (formats, taille)
+
+#### b. Méthodes pour repérer les bugs
+
+Tests fonctionnels manuels pour valider toutes les interactions utilisateur.
+
+Tests de performance pour mesurer les temps de réponse (ex. chargement du dashboard).
+
+Tests de sécurité pour vérifier les droits d’accès et la validation des fichiers.
+
+Tests d’intégration entre modules (projet ↔ tâches ↔ notifications).
+
+#### c. Critères de validation
+
+Les résultats affichés correspondent aux résultats attendus.
+
+Aucun plantage ni erreur inattendue.
+
+Le budget et les délais sont correctement calculés.
+
+Les contraintes (3 tâches max, dépendances) sont respectées.
+
+Les alertes et notifications fonctionnent dans les délais.
+
+### 3. Validation des Spécifications
+
+#### a. Méthode de vérification
+
+Comparer chaque résultat obtenu aux spécifications fonctionnelles rédigées.
+
+Vérifier la conformité des règles métier (limites, alertes, calculs).
+
+Contrôler la cohérence des champs saisis et des messages d’erreur.
+
+#### b. Outils / méthodologies
+
+Outil de gestion de tests : Jira (Xray) ou TestRail.
+
+Suivi des bugs via Trello / Azure DevOps.
+
+Analyse des logs d’erreurs et journaux d’audit.
+
+Tests de performance via JMeter.
+
+#### c. Validation performance & seuils
+
+Exécuter un test de charge sur 1000 tâches → le tableau de bord doit rester fluide.
+
+Simuler un dépassement de budget → vérifier que l’alerte est bien déclenchée.
+
+Vérifier que les temps de traitement et de notification respectent les seuils définis.
