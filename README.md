@@ -6,371 +6,442 @@
 
 ##### 1. Champs à saisir :
 
-Nom du projet 
+- Nom du projet 
 
-Description du projet 
+- Description du projet 
 
-Chef de projet 
+- Chef de projet 
 
-Date de début et date de fin (obligatoires, la fin ≥ début)
+- Date de début et date de fin (obligatoires, la fin ≥ début)
 
-Budget estimé (coût et temps)
+- Budget estimé (coût et temps)
 
-Liste des phases du projet :
+##### 2. Liste des phases du projet :
 
-Nom de la phase
+- Nom de la phase
 
-Description
+- Description de la phase
 
-Ordre d’exécution
+- Ordre d’exécution
 
-Tâches associées 
+- Tâches associées 
 
 #### b. Actions possibles
 
-Créer un nouveau projet
+- Créer un nouveau projet
 
-Modifier ou supprimer un projet existant
+- Modifier ou supprimer un projet existant
 
-Ajouter , modifier , supprimer une phase
+- Ajouter , modifier , supprimer une phase
 
-Attribuer un chef de projet
+- Attribuer un chef de projet
 
-Définir ou ajuster le budget
+- Définir ou ajuster le budget
 
-Consulter la liste des projets
+- Consulter la liste des projets
 
-Exporter le projet (PDF, Excel..)
+- Exporter le projet (PDF, Excel..)
 
 #### c. Résultats attendus
 
-Lors de la création → le projet est ajouté dans la base avec un identifiant unique.
+- Lors de la création → le projet est ajouté dans la base avec un identifiant unique.
 
-Lors de la modification → le projet est mis à jour et un journal des modifications est enregistré.
+- Lors de la modification → le projet est mis à jour et un journal des modifications est enregistré.
 
-Lors de la suppression → le projet est supprimé après confirmation.
+- Lors de la suppression → le projet est supprimé après confirmation.
 
-Les budgets et phases sont visibles dans la fiche du projet.
+- Les budgets et phases sont visibles dans la fiche du projet.
 
-Le chef de projet reçoit une notification à sa nomination.
+- Le chef de projet reçoit une notification à sa nomination.
 
 #### d. Règles métier et contraintes
 
-La date de fin ne peut être antérieure à la date de début.
+- La date de fin ne peut être antérieure à la date de début.
 
-Le budget total des tâches ne doit pas dépasser le budget global du projet.
+- Le budget total des tâches ne doit pas dépasser le budget global du projet.
 
-Chaque projet doit avoir un seul chef de projet.
+- Chaque projet doit avoir un seul chef de projet.
 
-Un projet ne peut pas dépasser un budget global prédéfini.
+- Un projet ne peut pas dépasser un budget global prédéfini.
 → Si ce seuil est atteint, une alerte est envoyée au chef de projet.
 
 #### e. Fonctionnalités non fonctionnelles
 
-Performance : chargement de la liste des projets.
+- Performance : chargement de la liste des projets.
 
-Sécurité : seuls les chefs de projet ou administrateurs peuvent créer ou supprimer un projet.
+- Sécurité : seuls les chefs de projet ou administrateurs peuvent créer ou supprimer un projet.
 
-Compatibilité : module accessible sur navigateurs récents (Chrome, Edge..).
+- Compatibilité : module accessible sur navigateurs récents (Chrome, Edge..).
 
-Disponibilité : 99,9 % d’uptime.
+- Disponibilité : 99,9 % d’uptime.
 
 ### 1.2. Planification des Tâches
 #### a. Entrées
 
-Nom de la tâche 
+- Nom de la tâche 
 
-Description 
+- Description de la tâche
 
-Phase associée (obligatoire)
+- Phase associée (obligatoire)
 
-Assignation des utilisateurs (1 à plusieurs)
+- Assignation des utilisateurs (1 à plusieurs)
 
-Budget de la tâche (temps et coût)
+- Budget de la tâche (temps et coût)
 
-Dates de début et de fin
+- Dates de début et de fin
 
-Dépendances (autres tâches)
+- Dépendances (autres tâches)
 
-Commentaires et fichiers attachés
+- Commentaires et fichiers attachés
 
 #### b. Actions possibles
 
-Créer / modifier / supprimer une tâche
+- Créer / modifier / supprimer une tâche
 
-Attribuer ou retirer un utilisateur
+- Attribuer ou retirer un utilisateur
 
-Ajouter une dépendance entre tâches
+- Ajouter une dépendance entre tâches
 
-Ajouter un commentaire ou un fichier
+- Ajouter un commentaire ou un fichier
 
-Mettre à jour l’état d’avancement
+- Mettre à jour l’état d’avancement
 
-Modifier les dates selon contraintes
+- Modifier les dates selon contraintes
 
 #### c. Résultats attendus
 
-Création : tâche enregistrée et visible dans la phase.
+- Création : tâche enregistrée et visible dans la phase.
 
-Assignation : notifications envoyées aux utilisateurs concernés.
+- Assignation : notifications envoyées aux utilisateurs concernés.
 
-Ajout de dépendance : le système empêche le démarrage d’une tâche dépendante tant que la tâche précédente n’est pas terminée.
+- Ajout de dépendance : le système empêche le démarrage d’une tâche dépendante tant que la tâche précédente n’est pas terminée.
 
-Ajout de commentaire ou fichier : visible immédiatement dans l’interface.
+- Ajout de commentaire ou fichier : visible immédiatement dans l’interface.
 
 #### d. Règles métier et contraintes
 
-Un utilisateur ne peut pas être affecté à plus de 3 tâches actives sur un même projet.
+- Un utilisateur ne peut pas être affecté à plus de 3 tâches actives sur un même projet.
 
-Les dépendances doivent être respectées : une tâche ne peut commencer qu’après la fin de la tâche dont elle dépend.
+- Les dépendances doivent être respectées : une tâche ne peut commencer qu’après la fin de la tâche dont elle dépend.
 
-Les fichiers joints doivent être de type autorisé (PDF, DOCX..≤ 10 Mo).
+- Les fichiers joints doivent être de type autorisé (PDF, DOCX..≤ 10 Mo).
 
-Les dates doivent être cohérentes (début ≤ fin).
+- Les dates doivent être cohérentes (début ≤ fin).
 
-Le budget d’une tâche ne doit pas faire dépasser le budget global du projet.
+- Le budget d’une tâche ne doit pas faire dépasser le budget global du projet.
 
 #### e. Fonctionnalités non fonctionnelles
 
-Performance : création de tâche rapidement.
+- Performance : création de tâche rapidement.
 
-Sécurité : contrôle d’accès par rôle (seuls les chefs peuvent créer des dépendances).
+- Sécurité : contrôle d’accès par rôle (seuls les chefs peuvent créer des dépendances).
 
-Compatibilité : responsive sur tablette et PC.
+- Compatibilité : responsive sur tablette et PC.
 
-Sauvegarde automatique en cas de perte de connexion.
+- Sauvegarde automatique en cas de perte de connexion.
 
 ### 1.3. Suivi des Performances
 ##### a. Entrées
 
-Données calculées automatiquement :
+- Données calculées automatiquement :
 
-Pourcentage d’avancement (nombre de tâches terminées / total)
+- Pourcentage d’avancement (nombre de tâches terminées / total)
 
-Dépenses réelles vs budget
+- Dépenses réelles vs budget
 
-Retards sur les délais
+- Retards sur les délais
 
 ##### b. Actions possibles
 
-Consulter le tableau de bord d’un projet
+- Consulter le tableau de bord d’un projet
 
-Filtrer par phase, membre ou statut
+- Filtrer par phase, membre ou statut
 
-Exporter le rapport de performance
+- Exporter le rapport de performance
 
-Configurer des alertes (budget, délai)
+- Configurer des alertes (budget, délai)
 
 ##### c. Résultats attendus
 
-Affichage du tableau de bord avec :
+- Affichage du tableau de bord avec :
 
-% d’achèvement du projet
+1- % d’achèvement du projet
 
-Budget consommé vs estimé
+2- Budget consommé vs estimé
 
-Tâches en retard
+3- Tâches en retard
 
 En cas de dépassement du budget ou du délai, une notification est envoyée au chef de projet.
 
 ##### d. Règles métier et contraintes
 
-Le calcul du taux d’avancement se base sur les tâches terminées.
+- Le calcul du taux d’avancement se base sur les tâches terminées.
 
-Aucune tâche ne peut être considérée comme “terminée” sans validation du chef de projet.
+- Aucune tâche ne peut être considérée comme “terminée” sans validation du chef de projet.
 
-Les notifications doivent être envoyées instantanément en cas de dépassement.
+- Les notifications doivent être envoyées instantanément en cas de dépassement.
 
 ##### e. Fonctionnalités non fonctionnelles
 
-Performance : affichage du tableau de bord ≤ 3 s.
+- Performance : affichage du tableau de bord ≤ 3 s.
 
-Sécurité : seules les personnes autorisées peuvent consulter les coûts.
+- Sécurité : seules les personnes autorisées peuvent consulter les coûts.
 
-Compatibilité : accessible depuis mobile.
+- Compatibilité : accessible depuis mobile.
 
-Fiabilité : mise à jour des KPIs en temps réel.
+- Fiabilité : mise à jour des KPIs en temps réel.
 
 ### 1.4. Règles Métier Globales
 ##### a. Règles
 
-Un utilisateur ne peut pas être affecté à plus de 3 tâches actives sur le même projet.
+- Un utilisateur ne peut pas être affecté à plus de 3 tâches actives sur le même projet.
 
-Un projet ne peut pas dépasser un budget global prédéfini.
+- Un projet ne peut pas dépasser un budget global prédéfini.
 
-Si le seuil de budget ou de temps est atteint, alerte automatique au chef de projet.
+- Si le seuil de budget ou de temps est atteint, alerte automatique au chef de projet.
 
-Les dépendances entre tâches doivent être respectées.
+- Les dépendances entre tâches doivent être respectées.
 
-Les dates doivent être logiquement cohérentes.
+- Les dates doivent être logiquement cohérentes.
 
 ##### b. Contraintes
 
-Aucune modification budgétaire n’est permise si le projet dépasse le seuil global.
+- Aucune modification budgétaire n’est permise si le projet dépasse le seuil global.
 
-L’assignation d’un 4ᵉ tâche à un utilisateur déclenche une erreur bloquante.
+- L’assignation d’une 4ème tâche à un utilisateur déclenche une erreur bloquante.
 
-Cohérence des dates et budgets
+- Cohérence des dates et budgets
 
 ## 2. Test Manuel - Scénarios de Test et Détection de Bugs
-### 1. Scénarios de Test
+### 1. Gestion des Projets
+#### Scénario GP1 – Création d’un projet valide
 
-##### A. Gestion des projets — Scénarios de test
-Scénario A1 — Création projet (Nominal)
+Objectif : Vérifier qu’un projet peut être créé avec des données complètes et valides.
 
-Ouvrir écran Nouveau projet.
+Étapes :
 
-Saisir : titre, dates valides, budget coût, budget temps, sélectionner chef de projet.
+- Accéder au module “Gestion des Projets”.
 
-Cliquer Créer.
-Résultat attendu : projet créé, page détail projet ouverte, message succès, projet visible liste projets, entrée d’audit enregistrée.
-Validation : vérifier DB (enregistrement), UI (affichage), logs.
+- Cliquer sur le bouton “Créer un projet”.
 
-Scénario A2 — Création avec dates invalides
+- Saisir un nom de projet valide, des dates de début et de fin cohérentes, un budget, et sélectionner un chef de projet.
 
-Saisir date fin antérieure à date début.
+- Cliquer sur “Créer”.
 
-Cliquer Créer.
-Résultat attendu : message d’erreur côté client + serveur, projet non créé.
-Validation : message d’erreur clair ; pas d’entrée en DB.
+Résultat attendu :
+Le projet est créé avec succès et apparaît dans la liste des projets existants.
 
-Scénario A3 — Modifier budget projet
+Validation :
+Vérifier que le projet figure bien dans la liste, avec toutes les informations correctement affichées.
 
-Modifier budget estimé pour le porter sous le seuil.
+#### Scénario GP2 – Création d’un projet avec budget manquant
 
-Sauvegarder.
-Résultat attendu : changement accepté, historique enregistré, notification au chef si config.
-Validation : audit, affichage nouveau montant.
+Objectif : Tester la validation des champs obligatoires lors de la création d’un projet.
 
-Zones de risque (Gestion projets)
+Étapes :
 
-Validation dates/budgets côté client et serveur.
+- Ouvrir la page “Créer un projet”.
 
-Concurrence (deux utilisateurs modifient budget en même temps) → vérifier mécanisme de locking/versioning.
+- Renseigner tous les champs sauf le budget.
 
-Erreurs d’export (formats).
+- Cliquer sur “Créer”.
 
-##### B. Planification des tâches — Scénarios de test
-Scénario B1 — Créer tâche et assigner 1 utilisateur
+Résultat attendu :
+Message d’erreur “Budget requis” affiché, le projet n’est pas créé.
 
-Créer tâche dans phase X, assigner utilisateur U, définir dates valides, estimations.
+Validation :
+Vérifier que le message d’erreur s’affiche et qu’aucun projet vide n’est ajouté à la liste.
 
-Sauvegarder.
-Résultat attendu : tâche créée, notification à U, visible dans phase et Gantt.
-Validation : email/in-app notification reçue, DB contient la tâche.
+#### Scénario GP3 – Dépassement du budget global
 
-Scénario B2 — Affectation >3 tâches (contrainte)
+Objectif : Vérifier que le système bloque la création d’un projet dont le budget dépasse le seuil autorisé.
 
-Avoir un utilisateur U déjà assigné à 3 tâches actives du projet.
+Étapes :
 
-Tenter d’assigner une 4e tâche à U.
-Résultat attendu : blocage avec message expliquant la règle R1 ; option override réservée aux admins.
-Validation : UI blocking, pas d’assignation en DB, journal d’erreur.
+- Créer un projet avec un budget supérieur à la limite autorisée.
 
-Scénario B3 — Dépendances et replanification automatique
+- Cliquer sur “Créer”.
 
-Créer Tâche A (fin prévue 10/10), Tâche B dépendant de A (start on finish of A).
+Résultat attendu :
+Message d’erreur “Budget dépasse le seuil autorisé” et alerte envoyée au chef de projet.
 
-Modifier date fin de A à 15/10.
-Résultat attendu : date début proposée pour B recalculée à ≥ 15/10 ; notification de conflit.
-Validation : vérification propagation, logs de recalcul.
+Validation :
+Vérifier que le projet n’est pas créé et que le message d’erreur est cohérent.
 
-Scénario B4 — Upload fichier et commentaire
+### 2. Planification des Tâches
+#### Scénario PT1 – Création d’une tâche valide
 
-Ajouter fichier valide et un commentaire.
-Résultat attendu : fichier stocké, accessible, commentaire visible horodaté.
-Validation : test téléchargement, test preview, vérifier métadonnées.
+Objectif : Vérifier la création d’une tâche avec des données correctes.
 
-Zones de risque (Planification)
+Étapes :
 
-Calcul et propagation des dépendances (cycles, propagation incorrecte)
+- Aller dans un projet actif.
 
-Contrôle de la contrainte d’affectation (synchronisation entre front/back)
+- Cliquer sur “Ajouter une tâche”.
 
-Uploads (corruption, échec, vulnérabilités)
+- Saisir un nom de tâche, des dates cohérentes, et assigner un utilisateur.
 
-Race conditions lors de modifications simultanées
+- Enregistrer la tâche.
 
-##### C. Suivi des performances & Notifications — Scénarios de test
-Scénario C1 — Dashboard KPI exactitude
+Résultat attendu :
+Tâche créée avec succès et notification envoyée à l’utilisateur assigné.
 
-Créer projet avec 4 tâches (2 terminées, coûts et temps connus).
+Validation :
+Vérifier que la tâche apparaît dans la liste et que la notification a bien été reçue.
 
-Vérifier que le % d’avancement et dépenses affichées concordent avec calcul choisi.
-Résultat attendu : KPIs mathématiquement corrects selon formule (déclarer formule testée).
-Validation : calcul manuel vs UI ; vérifier DB pour valeurs réelles.
+#### Scénario PT2 – Dépendance non respectée
 
-Scénario C2 — Notification dépassement budget tâche
+Objectif : Tester la gestion des dépendances entre tâches.
 
-Enregistrer coût réel d’une tâche supérieurs à estimation.
-Résultat attendu : notification immédiate au chef de projet.
-Validation : réception email/in-app, logs d’envoi, contenu du message conforme.
+Étapes :
 
-Scénario C3 — Alerte projet seuil global
+- Créer deux tâches A et B, où B dépend de A.
 
-Simuler accumulation de coûts au seuil configuré (ex. 90%).
-Résultat attendu : alerte au chef de projet, option d’arrêt d’approbation si config.
-Validation : audit, UI d’alerte, lien vers rapport.
+- Tenter de démarrer la tâche B avant la fin de A.
 
-### 2. Détection des Bugs 
-#### a. Zones de risque potentielles
+Résultat attendu :
+Blocage de la tâche et message “Dépendance non respectée”.
 
-Validation des formulaires (dates, budget, affectations)
+Validation :
+Vérifier que la tâche B reste bloquée jusqu’à la complétion de la tâche A.
 
-Calcul des dépendances entre tâches
+#### Scénario PT3 – Affectation de plus de 3 tâches à un utilisateur
 
-Calcul des budgets et pourcentages d’avancement
+Objectif : Vérifier la limite d’affectation des tâches par utilisateur.
 
-Gestion des notifications (risque de doublons ou absence d’alerte)
+Étapes :
 
-Upload des fichiers (formats, taille)
+- Identifier un utilisateur déjà assigné à 3 tâches actives.
 
-#### b. Méthodes pour repérer les bugs
+- Tenter de lui assigner une quatrième tâche.
 
-Tests fonctionnels manuels pour valider toutes les interactions utilisateur.
+Résultat attendu :
+Message d’erreur “Limite atteinte : 3 tâches actives maximum”.
 
-Tests de performance pour mesurer les temps de réponse (ex. chargement du dashboard).
+Validation :
+Vérifier que la tâche n’est pas créée et que le message est bien affiché.
 
-Tests de sécurité pour vérifier les droits d’accès et la validation des fichiers.
+#### Scénario PT4 – Ajout de fichier non autorisé
 
-Tests d’intégration entre modules (projet ↔ tâches ↔ notifications).
+Objectif : Tester la validation des fichiers lors du téléchargement.
 
-#### c. Critères de validation
+Étapes :
 
-Les résultats affichés correspondent aux résultats attendus.
+- Ouvrir une tâche et cliquer sur “Joindre un fichier”.
 
-Aucun plantage ni erreur inattendue.
+- Tenter d’ajouter un fichier de type .exe.
 
-Le budget et les délais sont correctement calculés.
+Résultat attendu :
+Message d’erreur “Type de fichier non autorisé”.
 
-Les contraintes (3 tâches max, dépendances) sont respectées.
+Validation :
+Vérifier qu’aucun fichier non conforme n’est ajouté à la tâche.
 
-Les alertes et notifications fonctionnent dans les délais.
+### 3. Suivi des Performances
+#### Scénario SP1 – Affichage du tableau de bord
 
-### 3. Validation des Spécifications
+Objectif : Vérifier que les indicateurs clés (KPIs) s’affichent correctement.
 
-#### a. Méthode de vérification
+Étapes :
 
-Comparer chaque résultat obtenu aux spécifications fonctionnelles rédigées.
+- Accéder à la section “Tableau de bord” d’un projet actif.
 
-Vérifier la conformité des règles métier (limites, alertes, calculs).
+- Observer l’affichage des KPIs (budget, avancement, délais, etc.).
 
-Contrôler la cohérence des champs saisis et des messages d’erreur.
+Résultat attendu :
+Les KPIs s’affichent correctement et reflètent les données réelles du projet.
 
-#### b. Outils / méthodologies
+Validation :
+Comparer les valeurs affichées avec les données sources dans la base de données ou les rapports internes.
 
-Outil de gestion de tests : Jira (Xray) ou TestRail.
+#### Scénario SP2 – Dépassement du budget
 
-Suivi des bugs via Trello / Azure DevOps.
+Objectif : Tester la détection automatique d’un dépassement budgétaire.
 
-Analyse des logs d’erreurs et journaux d’audit.
+Étapes :
 
-Tests de performance via JMeter.
+- Augmenter les dépenses réelles du projet au-delà du budget défini.
 
-#### c. Validation performance & seuils
+- Observer la réaction du système.
 
-Exécuter un test de charge sur 1000 tâches → le tableau de bord doit rester fluide.
+Résultat attendu :
+Notification immédiate envoyée au chef de projet.
 
-Simuler un dépassement de budget → vérifier que l’alerte est bien déclenchée.
+Validation :
+Vérifier la réception de la notification et le bon affichage du dépassement dans le tableau de bord.
 
-Vérifier que les temps de traitement et de notification respectent les seuils définis.
+#### Scénario SP3 – Retard sur une tâche
+
+Objectif : Vérifier la génération d’alerte en cas de retard de tâche.
+
+Étapes :
+
+- Laisser passer la date de fin d’une tâche sans la marquer comme terminée.
+
+- Observer les alertes générées.
+
+Résultat attendu :
+Alerte “Tâche en retard” affichée sur le tableau de bord.
+
+Validation :
+Vérifier que l’alerte s’affiche et reste visible jusqu’à la clôture de la tâche.
+
+### 4. Détection des Bugs
+Zones de risques potentielles :
+
+- Validation de formulaires (champs obligatoires non renseignés, formats incorrects)
+
+- Calcul du budget et dépassement des seuils
+
+- Gestion des dépendances entre tâches
+
+- Téléversement de fichiers non conformes
+
+- Affichage et mise à jour des indicateurs du tableau de bord
+
+Méthodes utilisées pour repérer les bugs :
+
+- Tests fonctionnels : vérifier chaque scénario prévu dans les spécifications.
+
+- Tests de validation : comparer le résultat attendu et le résultat réel.
+
+- Tests de performance : observer le temps de réponse du tableau de bord.
+
+- Tests de sécurité : s’assurer que les fichiers malveillants (.exe) sont bloqués.
+
+Critères de validation :
+
+- Conformité avec les exigences fonctionnelles.
+
+- Absence d’erreurs visibles (messages incorrects, crashs, données incohérentes).
+
+- Bon affichage des messages d’erreur et alertes.
+
+- Respect des contraintes de budget, dépendances et délais.
+
+### 5. Validation des Spécifications Fonctionnelles
+Méthodologie :
+
+- Comparer le résultat attendu de chaque scénario avec le résultat obtenu.
+
+- Documenter les écarts observés et les anomalies détectées.
+
+- Utiliser une grille de tests (Excel ou TestLink) pour suivre le statut (Passé / Échoué).
+
+Outils de test possibles :
+
+- Jira ou TestLink pour la gestion des cas de test.
+
+- Excel / Google Sheets pour le suivi manuel.
+
+- Captures d’écran / rapports PDF pour la traçabilité.
+
+- Logs applicatifs pour identifier les erreurs côté serveur.
+
+Validation de la performance :
+
+- Vérifier que les temps de chargement des pages restent acceptables (< 3s).
+
+- S’assurer que les notifications et alertes sont émises en temps réel.
+
+- Confirmer qu’aucun dépassement de budget ni retard non signalé n’apparaît.
